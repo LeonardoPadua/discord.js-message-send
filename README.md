@@ -13,7 +13,7 @@ I don't really know, this package isn't really usefull its just made for fun!
 Then...
 
 ```
-    const Send = require('discord-send')
+    const { Send } = require('discord-send')
 
     Send(Hello! This is a test!)
 ```
