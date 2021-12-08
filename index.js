@@ -1,8 +1,8 @@
-function send(word) {
-    message.channel.send(word)
+const { Message } = require('discord.js');
+const message = new Message();
 
-    if(word == 'nigga' || 'nibba' || 'nigger' || 'niga' || 'niba') {
-        console.log('You can\'t say that!')
-        message.channel.send('Look in your console!')
-    }
+function Send(word) {
+    message.channel.send(word)
 }
+
+module.exports = Send;
