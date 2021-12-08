@@ -1,8 +1,25 @@
-const { Message } = require('discord.js');
-const message = new Message();
-
-function Send(word) {
-    message.channel.send(word)
+function Send({ messageToSend = "", message, embeds? = [null] }) {
+    if (embeds === [null]) {
+        message.channel.send({ content: messageToSend })
+    } else {
+        if (messageToSend !== "") {
+        message.channel.send({ content: messageToSend, embeds: embeds})
+        } else {
+            message.channel.send({ embeds: embeds })
+        }
+    }
 }
 
-module.exports = Send;
+function Reply({ messageToSend = "", message, embeds? = [null] }) {
+    if (embeds === [null]) {
+        message.reply({ content: messageToSend })
+    } else {
+        if (messageToSend !== "") {
+            message.reply({ content: messageToSend, embeds: embeds  })
+        } else {
+            message.reply({ embeds: embeds })
+        }
+    }
+}
+
+module.exports = { Send, Reply  };
